@@ -12,7 +12,7 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
 
-    val words = listOf("Android", "Activity", "Fragment")
+    val words = listOf("Мышара", "Петушара", "Гаглюся")
     val secretWord = words.random().uppercase()
     var secretWordDisplay = ""
     var correctGuesses = ""
@@ -68,10 +68,11 @@ class GameFragment : Fragment() {
             if(secretWord.contains(guess)){
                 correctGuesses += guess
                 secretWordDisplay = deriveSecretWordDisplaying()
+            } else {
+                incorrectGuesses += guess
+                livesLeft--
+                updateScreen()
             }
-        } else {
-            incorrectGuesses += guess
-            livesLeft--
         }
     }
 
