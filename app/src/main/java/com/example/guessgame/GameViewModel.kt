@@ -26,7 +26,6 @@ class GameViewModel: ViewModel() {
         _secretWordDisplay.value = deriveSecretWordDisplaying()
     }
 
-
     private fun deriveSecretWordDisplaying(): String {
         var display = ""
         secretWord.forEach { display += checkLetter(it.toString()) }
