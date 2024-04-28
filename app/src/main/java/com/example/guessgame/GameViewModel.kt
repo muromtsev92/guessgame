@@ -5,12 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class GameViewModel: ViewModel() {
-    private val words = listOf("Мышара", "Петушара", "Гаглюся")
+    private val words = listOf("Лошадь", "Петушара", "Путин", "Байден", "Якубович", "Эйзенхауер", "Медведев", "Черчиль", "Чемберлен")
     private val secretWord = words.random().uppercase()
     private var correctGuesses = ""
     private val _secretWordDisplay = MutableLiveData<String>()
     private val _incorrectGuesses = MutableLiveData<String>("")
-    private val _livesLeft = MutableLiveData<Int>(8)
+    private val _livesLeft = MutableLiveData<Int>(4)
     private val _gameOver = MutableLiveData<Boolean>(false)
 
     val livesLeft: LiveData<Int>
